@@ -21,6 +21,8 @@ public:
     virtual ~Array();
     
     std::vector<int> twoSum (std::vector<int> dataIn, int target);
+
+    int removeElement(std::vector<int>& nums, int val);
 private:
 };
 

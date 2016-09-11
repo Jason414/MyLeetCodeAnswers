@@ -36,13 +36,26 @@ int main(int argc, char** argv) {
     if (result.size() > 0){
         std::cout << "************** Problem 1 begin **************" << std::endl;
         std::cout << "Output of TwoSum is: ";
-        for (int i = 0; i < result.size(); i++){
+        for (uint i = 0; i < result.size(); i++){
             std::cout << result[i] << " ";
         }
         std::cout << std::endl;
         std::cout << "************** Problem 1 end ****************" << std::endl;
     }
     
+    std::cout << std::endl;
+    std::cout << "************** Problem 2 (remove element) begin **************" << std::endl;
+    std::vector<int> num = {1, 2, 2, 2, 3, 2, 4};
+    int valRemoved = 3;
+    std::cout << "The input Vector is:";
+    for (uint i = 0; i < num.size(); i++){
+    	std::cout << " " << num[i];
+    }
+    std::cout << std::endl;
+    std::cout << "The values to be removed is " << valRemoved << std::endl;
+    int lenOut = arrayPtr->removeElement(num, valRemoved);
+    std::cout << "Length of final sequence is: " << lenOut << std::endl;
+    std::cout << "************** Problem 2 end ****************" << std::endl;
     return 0;
 }
 

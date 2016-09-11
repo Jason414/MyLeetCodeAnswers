@@ -31,7 +31,7 @@ std::vector<int> Array::twoSum(std::vector<int> dataIn, int target){
     std::vector<int> result;
     std::unordered_map<int, int> myMap;
         // assume there is no repeated values in "dataIn". 
-    for (int i = 0; i < dataIn.size(); i++){
+    for (uint i = 0; i < dataIn.size(); i++){
         myMap[dataIn[i]] = i;
     }
     // 1. dataIn[i] is the index of unordered_map which is unique for each entry. 
@@ -40,9 +40,9 @@ std::vector<int> Array::twoSum(std::vector<int> dataIn, int target){
     // the entry if index of that entry is identical with the argument "index". If no such 
     // item, the unordered_map.find(index) will return the iterator pointing to the end
     // of the unordered_map, i.e., unordered_map.end().
-    for (int j = 0; j < myMap.size(); j++){
+    for (uint j = 0; j < myMap.size(); j++){
         int anotherNumber = target - dataIn[j];
-        if (myMap.find(anotherNumber) != myMap.end() && myMap.find(anotherNumber)->second != j){
+        if (myMap.find(anotherNumber) != myMap.end() && myMap.find(anotherNumber)->second != (int)j){
             std::unordered_map<int, int>::const_iterator it = myMap.find(anotherNumber);
             result.push_back(it->second);
         }
@@ -51,4 +51,19 @@ std::vector<int> Array::twoSum(std::vector<int> dataIn, int target){
     // and the end of the vector. 
     std::sort(result.begin(), result.end());
     return result;
+}
+
+int Array::removeElement(std::vector<int>& nums, int val){
+	int len = 0;
+	int i = 0;
+	for (uint k = 0; k < nums.size(); k++){
+		if (nums[k] != val){
+			nums[i] = nums[k];
+			i++;
+		}
+		else{
+		}
+	}
+	len = i;
+	return len;
 }
