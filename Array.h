@@ -19,10 +19,14 @@ public:
     Array();
     Array(const Array& orig);
     virtual ~Array();
-    
+    // Problem 1.
     std::vector<int> twoSum (std::vector<int> dataIn, int target);
-
+    // Problem 2.
     int removeElement(std::vector<int>& nums, int val);
+    // Problem 3.
+    int removeRepeat(std::vector <int> &nums);
+    // Problem 4.
+    int removeRepeatAllowTwice(std::vector <int> &nums);
 private:
 };
 

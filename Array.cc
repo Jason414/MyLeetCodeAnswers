@@ -67,3 +67,35 @@ int Array::removeElement(std::vector<int>& nums, int val){
 	len = i;
 	return len;
 }
+
+int Array::removeRepeat(std::vector <int> &nums){
+	int i = 0;
+	for (uint k = 0; k < nums.size(); k++){
+		if (nums[i] != nums[k]){
+			nums[i] = nums[k];
+			i++;
+		}
+	}
+	return i;
+}
+
+int Array::removeRepeatAllowTwice(std::vector <int> &nums){
+	uint i = 0;
+	int counter = 0;
+	std::cout << "the new vector is: ";
+	for (uint k = 1; k < nums.size() - 1; k++){
+		if (nums[i] != nums[k] || (nums[i] == nums[k] && counter < 1)){
+			if (nums[i] == nums[k]) {
+				counter ++;
+			}
+			else{
+				counter = 0;
+			}
+			i++;
+			nums[i] = nums[k];
+			std::cout << " " << nums[i];
+		}
+	}
+	std::cout << std::endl;
+	return i + 1;
+}

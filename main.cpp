@@ -56,6 +56,30 @@ int main(int argc, char** argv) {
     int lenOut = arrayPtr->removeElement(num, valRemoved);
     std::cout << "Length of final sequence is: " << lenOut << std::endl;
     std::cout << "************** Problem 2 end ****************" << std::endl;
+
+    std::cout << std::endl;
+    std::cout << "************** Problem 3 (Remove repeat elements in sorted array) **************" << std::endl;
+    std::vector <int> num1 = {1, 2, 2, 4, 4, 4, 5};
+    std::cout << "The input vector is:";
+    for (uint i = 0; i < num1.size(); i++){
+    	std::cout << " " << num1[i];
+    }
+    std::cout << std::endl;
+    int lenOutRemoveRepeat = arrayPtr->removeRepeat(num1);
+    std::cout << "Length of final sequence is: " << lenOutRemoveRepeat << std::endl;
+    std::cout << "************** Problem 3 end ****************" << std::endl;
+
+    std::cout << std::endl;
+    std::cout << "************** Problem 4 (Remove repeat elements in sorted array, allow at most twice) **************" << std::endl;
+    std::vector <int> num2 = {1, 1, 1, 2, 2, 2, 3, 3, 3, 5, 6, 6, 6};
+    std::cout << "The input vector is:";
+    for (uint i = 0; i < num2.size(); i++){
+    	std::cout << " " << num2[i];
+    }
+    std::cout << std::endl;
+    int lenOutRemoveRepeatTwice = arrayPtr->removeRepeatAllowTwice(num2);
+    std::cout << "Length of final sequence is: " << lenOutRemoveRepeatTwice << std::endl;
+    std::cout << "************** Problem 4 end ****************" << std::endl;
     return 0;
 }
 
