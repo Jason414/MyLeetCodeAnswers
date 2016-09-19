@@ -16,6 +16,7 @@
 #include <vector>
 #include "SmartPtr.h"
 #include "Array.h"
+#include "DynamicProgramming.h"
 
 using namespace std;
 
@@ -23,6 +24,7 @@ using namespace std;
  * 
  */
 class Array;
+class DynamicProgramming;
 
 
 int main(int argc, char** argv) {
@@ -30,6 +32,7 @@ int main(int argc, char** argv) {
     
     // 1. Two Sum.
     SmartPtr<Array> arrayPtr(new Array);
+    SmartPtr<DynamicProgramming> DPPtr(new DynamicProgramming);
     std::vector<int> dataIn = {6, 3, 9, 0, 5, 12};
     int targetVal = 12;
     std::vector<int> result = arrayPtr->twoSum(dataIn, targetVal);
@@ -103,6 +106,18 @@ int main(int argc, char** argv) {
     }
     std::cout << std::endl;
     std::cout << "************** Problem 5 end ****************" << std::endl;
+
+    std::cout << std::endl;
+    std::cout << "************** Problem 6 Best Time to Buy and Sell Stock **************" << std::endl;
+    std::vector <double> prices = {1, 1, 3, 65, 6, 9};
+    std::cout << "The input vector is:";
+    for (uint i = 0; i < prices.size(); i++){
+        std::cout << " " << prices[i];
+    }
+    std::cout << std::endl;
+    double profit = DPPtr->maxProfit(prices);
+    std::cout << "The maximum profit is: " << profit << std::endl;
+    std::cout << "************** Problem 6 end ****************" << std::endl;
     return 0;
 }
 
