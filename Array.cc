@@ -99,3 +99,27 @@ int Array::removeRepeatAllowTwice(std::vector <int> &nums){
 	std::cout << std::endl;
 	return i + 1;
 }
+
+void Array::merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n) {
+//	int idx = m + n;    // index of the last element in first vector.
+	int idx1 = m - 1;
+	int idx2 = n - 1;
+	for (int idx = m + n - 1; idx >= 0; idx --){
+		if (nums1[idx1] > nums2[idx2]){
+			nums1[idx] = nums1[idx1];
+			idx1 --;
+		}
+		else{
+			nums1[idx] = nums2[idx2];
+			idx2 --;
+		}
+		if ((idx1 == -1 && idx2 != -1)|| (idx2 == -1 && idx1 != -1)) {
+			break;
+		}
+	}
+	if (idx1 == -1 && idx1 != -1){ // put all the remaining nums2 into the final vector.
+		for (int k = idx2; k >= 0; k--){
+			nums1[k] = nums2[k];
+		}
+	}
+}

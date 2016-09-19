@@ -80,6 +80,29 @@ int main(int argc, char** argv) {
     int lenOutRemoveRepeatTwice = arrayPtr->removeRepeatAllowTwice(num2);
     std::cout << "Length of final sequence is: " << lenOutRemoveRepeatTwice << std::endl;
     std::cout << "************** Problem 4 end ****************" << std::endl;
+
+
+    std::cout << std::endl;
+    std::cout << "************** Problem 5 Merge Sorted Array **************" << std::endl;
+    std::vector <int> nums1 = {1, 1, 3, 4, 6, 8};
+    std::vector <int> nums2 = {2, 5, 10};
+    std::cout << "The first input vector is:";
+    for (uint i = 0; i < nums1.size(); i++){
+        std::cout << " " << nums1[i];
+    }
+    std::cout << std::endl;
+    std::cout << "The second input vector is:";
+    for (uint i = 0; i < nums2.size(); i++){
+    	std::cout << " " << nums2[i];
+    }
+    std::cout << std::endl;
+    arrayPtr->merge(nums1, nums1.size(), nums2, nums2.size());
+    std::cout << "The output vector is: ";
+    for (uint j = 0; j < nums1.size() + nums2.size(); j++){
+    	std::cout << " " << nums1[j];
+    }
+    std::cout << std::endl;
+    std::cout << "************** Problem 5 end ****************" << std::endl;
     return 0;
 }
 

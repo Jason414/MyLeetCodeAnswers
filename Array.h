@@ -27,6 +27,8 @@ public:
     int removeRepeat(std::vector <int> &nums);
     // Problem 4.
     int removeRepeatAllowTwice(std::vector <int> &nums);
+    // Problem 5.
+    void merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n);
 private:
 };
 
